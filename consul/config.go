@@ -258,6 +258,10 @@ func DefaultConfig() *Config {
 	// Disable shutdown on removal
 	conf.RaftConfig.ShutdownOnRemove = false
 
+	// Timeout ping fix test
+	conf.RaftConfig.HeartbeatTimeout = 10000 * time.Millisecond
+	conf.RaftConfig.ElectionTimeout = 10000 * time.Millisecond
+
 	return conf
 }
 
